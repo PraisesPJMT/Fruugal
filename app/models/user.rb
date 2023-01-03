@@ -6,4 +6,8 @@ class User < ApplicationRecord
          :trackable
 
   validates :name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true
+
+  has_many :groups, foreign_key: :users_id, dependent: :destroy
 end
