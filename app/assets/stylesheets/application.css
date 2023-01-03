@@ -13,3 +13,353 @@
  *= require_tree .
  *= require_self
  */
+
+/* Variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Galada&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Figtree', sans-serif;
+}
+
+:root {
+  --mainColor: #3778c2;
+  --secondColor: #5fb523;
+  --textColor: #434b54;
+  --textColorDark: #555d67;
+  --textColorMedium: #878a8f;
+  --textColorLight: #989da3;
+  --mobileMenuSize: 30px;
+  --lightBackground: #f5f6f8;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--lightBackground);
+  color: var(--textColor);
+  position: relative;
+}
+
+/* Header Styles */
+
+header {
+  background: var(--mainColor);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.nav-header {
+  margin: 0 auto;
+}
+
+.menu-btn {
+  display: flex;
+  background: none;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: end;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-btn .bar {
+  position: relative;
+  width: var(--mobileMenuSize);
+  height: 2px;
+  background: #fff;
+  transition: all 0.45s ease-in-out;
+}
+
+.menu-btn .bar::before,
+.menu-btn .bar::after {
+  content: "";
+  position: absolute;
+  width: var(--mobileMenuSize);
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.45s ease-in-out;
+}
+
+.menu-btn .bar::before {
+  transform: translateY(-8px);
+  right: 0;
+}
+
+.menu-btn .bar::after {
+  transform: translateY(8px);
+  right: 0;
+}
+
+.menu-btn.open .bar {
+  transform: translateX(-40px);
+  background: transparent;
+}
+
+.menu-btn.open .bar::before {
+  width: 50px;
+  transform: rotate(45deg) translate(26px, -26px);
+}
+
+.menu-btn.open .bar::after {
+  transform: rotate(-45deg) translate(26px, 26px);
+}
+
+.nav-btn {
+  display: flex;
+  background: none;
+  outline: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: end;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-btn .ptr {
+  position: relative;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.45s ease-in-out;
+}
+
+.nav-btn .ptr::before,
+.nav-btn .ptr::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.45s ease-in-out;
+}
+
+.nav-btn .ptr::before {
+  rotate: -45deg;
+  translate: -12px -5px;
+  right: 0;
+}
+
+.nav-btn .ptr::after {
+  rotate: 45deg;
+  translate: -12px 5px;
+  right: 0;
+}
+
+.sub-title,
+.sub-heading {
+  color: var(--textColor);
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+/* Button Styles */
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 3px;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  font-weight: 900;
+}
+
+.primary-btn {
+  background: var(--mainColor);
+  border: none;
+  color: #fff;
+}
+
+.secondary-btn {
+  background: var(--secondColor);
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.delete-btn,
+.red-link {
+  background: #730e15;
+  border: 2px solid #730e15;
+  color: #fff;
+}
+
+.tertiary-btn {
+  background: #fff;
+  border: none;
+  color: var(--textColor);
+}
+
+.tertiary-btn:hover {
+  color: var(--mainColor);
+}
+
+.sign-link {
+  text-decoration: none;
+  color: var(--textColorLight);
+  font-size: 1rem;
+  border: none;
+  background: none;
+}
+
+.sign-link:hover {
+  color: var(--mainColor);
+}
+
+.red-link {
+  padding: 0.3rem;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+}
+
+.red-link:hover {
+  font-weight: bold;
+}
+
+/* Splash Styles */
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--lightBackground);
+  padding: 1rem;
+}
+
+.splash-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.splash-logo {
+  font-family: 'Galada', cursive;
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+
+.splash-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Form Styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  gap: 0.4rem;
+  background: none;
+  color: var(--textColor);
+}
+
+form .field,
+form .actions,
+form .field-check {
+  width: 100%;
+}
+
+form .field-check {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  color: var(--textColorLight);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--textColorLight);
+}
+
+input:-webkit-autofill,
+input.input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--textColorMedium);
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 10px 10px 10px 30px #fff inset !important;
+}
+
+input:-webkit-autofill::placeholder,
+input.input::placeholder {
+  color: var(--textColorLight);
+}
+
+input:-webkit-autofill:focus,
+input.input:focus,
+input[type="checkbox"]:focus {
+  outline: 1px solid #989da360 !important;
+  border: 1px solid #989da360 !important;
+}
+
+/* User Styles */
+
+.user {
+  padding: 1rem;
+}
+
+.user-section {
+  margin: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.btn-container form {
+  margin: 0;
+  padding: 0;
+}
+
+.user p {
+  color: var(--textColorMedium);
+  margin: 0.3rem 0;
+}
+
+.user-detail {
+  color: var(--textColor);
+  font-weight: bold;
+}
