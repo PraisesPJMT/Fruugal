@@ -15,9 +15,9 @@
     <h3 class="nav-header">LOG IN</h3>
   <% elsif request.path == new_user_password_path or request.path == edit_user_password_path %>
     <h3 class="nav-header">PASSWORD</h3>
-  <% elsif request.path == user_path(current_user) %>
+  <% elsif current_user && request.path == user_path(current_user) %>
     <h3 class="nav-header">PROFILE</h3>
-  <% elsif request.path == edit_user_registration_path(current_user) %>
+  <% elsif current_user && request.path == edit_user_registration_path(current_user) %>
     <h3 class="nav-header">EDIT USER</h3>
   <% else %>
     <h3 class="nav-header">USER</h3>
