@@ -16,7 +16,7 @@
 
 /* Variables */
 
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Galada&display=swap');
 
 * {
   margin: 0;
@@ -41,6 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fff;
   color: var(--textColor);
+  position: relative;
 }
 
 /* Header Styles */
@@ -155,4 +156,72 @@ header {
   rotate: 45deg;
   translate: -12px 5px;
   right: 0;
+}
+
+/* Button Styles */
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  font-weight: 900;
+}
+
+.primary-btn {
+  background: var(--mainColor);
+  border: none;
+  color: #fff;
+}
+
+.tertiary-btn {
+  background: #fff;
+  border: none;
+  color: var(--textColor);
+}
+
+/* Splash Styles */
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  padding: 1rem;
+}
+
+.splash-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.splash-logo {
+  font-family: 'Galada', cursive;
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+
+.splash-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
