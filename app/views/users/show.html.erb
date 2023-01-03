@@ -8,6 +8,7 @@
 
   <div class="btn-container">
     <%= button_to "Edit Profile", class: "btn edit-btn"%>
+    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "btn edit-btn"%>
     <%= button_to "View Budgets", class: "btn primary-btn"%>
   </div>
 </section>

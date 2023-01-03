@@ -13,3 +13,146 @@
  *= require_tree .
  *= require_self
  */
+
+/* Variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Figtree', sans-serif;
+}
+
+:root {
+  --mainColor: #3778c2;
+  --secondColor: #5fb523;
+  --textColor: #434b54;
+  --textColorDark: #555d67;
+  --textColorMedium: #878a8f;
+  --textColorLight: #989da3;
+  --mobileMenuSize: 30px;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: var(--textColor);
+}
+
+/* Header Styles */
+
+header {
+  background: var(--mainColor);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.nav-header {
+  margin: 0 auto;
+}
+
+.menu-btn {
+  display: flex;
+  background: none;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: end;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-btn .bar {
+  position: relative;
+  width: var(--mobileMenuSize);
+  height: 2px;
+  background: #fff;
+  transition: all 0.45s ease-in-out;
+}
+
+.menu-btn .bar::before,
+.menu-btn .bar::after {
+  content: "";
+  position: absolute;
+  width: var(--mobileMenuSize);
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.45s ease-in-out;
+}
+
+.menu-btn .bar::before {
+  transform: translateY(-8px);
+  right: 0;
+}
+
+.menu-btn .bar::after {
+  transform: translateY(8px);
+  right: 0;
+}
+
+.menu-btn.open .bar {
+  transform: translateX(-40px);
+  background: transparent;
+}
+
+.menu-btn.open .bar::before {
+  width: 50px;
+  transform: rotate(45deg) translate(26px, -26px);
+}
+
+.menu-btn.open .bar::after {
+  transform: rotate(-45deg) translate(26px, 26px);
+}
+
+.nav-btn {
+  display: flex;
+  background: none;
+  outline: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: end;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-btn .ptr {
+  position: relative;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.45s ease-in-out;
+}
+
+.nav-btn .ptr::before,
+.nav-btn .ptr::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.45s ease-in-out;
+}
+
+.nav-btn .ptr::before {
+  rotate: -45deg;
+  translate: -12px -5px;
+  right: 0;
+}
+
+.nav-btn .ptr::after {
+  rotate: 45deg;
+  translate: -12px 5px;
+  right: 0;
+}
