@@ -1,14 +1,26 @@
 <section class="user">
-  <h1><%= @user.name %> Profile</h1>
-  <p><span class="user-detail">Name:</span> <%= @user.name %></p>
-  <p><span class="user-detail">Email:</span> <%= @user.email %></p>
-  <p><span class="user-detail">Session count:</span> <%= @user.sign_in_count %></p>
-  <p><span class="user-detail">Current sign-in at:</span> <%= @user.current_sign_in_at %></p>
-  <p><span class="user-detail">Last sign-in at:</span> <%= @user.last_sign_in_at %></p>
+  <h1 class="sub-title"><%= @user.name %> Profile</h1>
+  <div class="user-section">
+    <p><span class="user-detail">Name: </span> <%= @user.name %></p>
+    <p><span class="user-detail">Email: </span> <%= @user.email %></p>
+  </div>
+
+  <div class="user-section">
+    <h3 class="sub-heading">Session Info</h3>
+    <p><span class="user-detail">Session count: </span> <%= @user.sign_in_count %></p>
+    <p><span class="user-detail">Current sign-in at: </span> <%= @user.current_sign_in_at %></p>
+    <p><span class="user-detail">Last sign-in at: </span> <%= @user.last_sign_in_at %></p>
+  </div>
+
+  <div class="user-section">
+    <h3 class="sub-heading">Budget Info</h3>
+    <p><span class="user-detail">Budget count: </span>0</p>
+    <p><span class="user-detail">Transaction count: </span>0</p>
+  </div>
 
   <div class="btn-container">
-    <%= button_to "Edit Profile", class: "btn edit-btn"%>
-    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "btn edit-btn"%>
-    <%= button_to "View Budgets", class: "btn primary-btn"%>
+    <%= button_to "VIEW BUDGETS", user_session_path, class: "btn primary-btn"%>
+    <%= link_to "EDIT PROFILE", edit_user_registration_path(current_user), class: "btn secondary-btn"%>
+    <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn delete-btn"%>
   </div>
 </section>

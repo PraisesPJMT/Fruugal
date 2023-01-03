@@ -159,9 +159,11 @@ header {
   right: 0;
 }
 
-.sub-title {
+.sub-title,
+.sub-heading {
   color: var(--textColor);
   text-align: center;
+  margin: 0.5rem auto;
 }
 
 /* Button Styles */
@@ -196,6 +198,13 @@ header {
   color: #fff;
 }
 
+.delete-btn,
+.red-link {
+  background: #730e15;
+  border: 2px solid #730e15;
+  color: #fff;
+}
+
 .tertiary-btn {
   background: #fff;
   border: none;
@@ -216,6 +225,16 @@ header {
 
 .sign-link:hover {
   color: var(--mainColor);
+}
+
+.red-link {
+  padding: 0.3rem;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+}
+
+.red-link:hover {
+  font-weight: bold;
 }
 
 /* Splash Styles */
@@ -311,4 +330,36 @@ input.input:focus,
 input[type="checkbox"]:focus {
   outline: 1px solid #989da360 !important;
   border: 1px solid #989da360 !important;
+}
+
+/* User Styles */
+
+.user {
+  padding: 1rem;
+}
+
+.user-section {
+  margin: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.btn-container form {
+  margin: 0;
+  padding: 0;
+}
+
+.user p {
+  color: var(--textColorMedium);
+  margin: 0.3rem 0;
+}
+
+.user-detail {
+  color: var(--textColor);
+  font-weight: bold;
 }
