@@ -19,6 +19,8 @@
     <h3 class="nav-header">PROFILE</h3>
   <% elsif current_user && request.path == edit_user_registration_path(current_user) %>
     <h3 class="nav-header">EDIT USER</h3>
+  <% elsif request.path == categories_path || request.path == new_category_path || request.path == edit_category_path || request.path == category_path %>
+    <h3 class="nav-header">CATEGORY</h3>
   <% else %>
     <h3 class="nav-header">USER</h3>
   <% end %>

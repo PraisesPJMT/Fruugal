@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/splash'
   devise_for :users
 
   root to: "pages#splash"
@@ -8,4 +7,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users, only: [:show]
+  resources :pages
+  resources :categories
 end
