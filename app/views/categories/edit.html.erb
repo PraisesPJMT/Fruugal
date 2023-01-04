@@ -1,5 +1,5 @@
 <section class="category">
-  <%= form_with model: @category, url: categories_path, method: :post, locals: true, scope: :category, class: "category-form" do |f| %>
+  <%= form_with model: @category, url: category_path, method: :put, locals: true, scope: :category, class: "category-form" do |f| %>
 
     <div class="field">
       <%= f.text_field :name, placeholder: "Category name", autofocus: true, class: "input" %>
@@ -19,14 +19,9 @@
       </div>
     </div>
 
-<!--    <div class="actions">-->
-      <%#= f.submit "CREATE CATEGORY", class: "btn secondary-btn"  %>
-<!--    </div>-->
-
     <div class="btn-container">
-      <%= f.submit "CREATE CATEGORY", class: "btn secondary-btn"  %>
+      <%= f.submit "UPDATE CATEGORY", class: "btn secondary-btn"  %>
       <%= link_to "BACK TO CATEGORY", :back, class: "btn primary-btn"%>
     </div>
-
   <% end %>
 </section>

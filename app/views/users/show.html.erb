@@ -8,8 +8,14 @@
   <div class="user-section">
     <h3 class="sub-heading">Session Info</h3>
     <p><span class="user-detail">Session count: </span> <%= @user.sign_in_count %></p>
-    <p><span class="user-detail">Current sign-in at: </span> <%= @user.current_sign_in_at %></p>
-    <p><span class="user-detail">Last sign-in at: </span> <%= @user.last_sign_in_at %></p>
+    <p>
+      <span class="user-detail">Current sign-in: </span>
+      <%= @user.current_sign_in_at.strftime("%d ") + @user.current_sign_in_at.strftime("%B")[0..2] + @user.current_sign_in_at.strftime(" %Y at %I:%M %p") %>
+    </p>
+    <p>
+      <span class="user-detail">Last sign-in: </span>
+      <%= @user.last_sign_in_at.strftime("%d ") + @user.last_sign_in_at.strftime("%B")[0..2] + @user.last_sign_in_at.strftime(" %Y at %I:%M %p") %>
+    </p>
   </div>
 
   <div class="user-section">

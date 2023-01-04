@@ -1,0 +1,21 @@
+<section class="category-sec">
+  <p class="cat-total">
+    <span class="cat-card-name">Total Budget</span>
+    <span class="cat-card-amount">$50</span>
+  </p>
+  <div class="category-wrapper">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category), class: "category-card" do %>
+        <img class="category-img" src=<%=category.icon%> alt=<%=category.name %> />
+        <div class="cat-card-info">
+          <p class="cat-det">
+            <span class="cat-card-name"><%= category.name %></span>
+            <span class="cat-card-amount">$50</span>
+          </p>
+          <p class="cat-date"><%= category.created_at.strftime("%d %B %Y at %I:%M %p") %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "NEW CATEGORY", new_category_path, class: "btn secondary-btn" %>
+</section>
