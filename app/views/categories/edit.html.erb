@@ -1,0 +1,27 @@
+<section class="category">
+  <%= form_with model: @category, url: category_path, method: :put, locals: true, scope: :category, class: "category-form" do |f| %>
+
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Category name", autofocus: true, class: "input" %>
+    </div>
+
+    <div class="check-box-field">
+      <p class="sign-link">Select an icon for category</p>
+      <div class="check-boxes">
+        <% Category::ICONS.each do |i| %>
+      <span>
+        <%= f.radio_button :icon, "https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/#{i}.png", id: i %>
+        <label for="<%=i%>" class="custom-radio">
+        <img src="https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/<%= i %>.png" class="select-icon" alt=<%= i %>>
+      </label>
+      </span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <%= f.submit "UPDATE CATEGORY", class: "btn secondary-btn"  %>
+      <%= link_to "BACK TO CATEGORY", :back, class: "btn primary-btn"%>
+    </div>
+  <% end %>
+</section>

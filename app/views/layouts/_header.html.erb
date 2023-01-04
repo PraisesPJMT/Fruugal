@@ -1,10 +1,10 @@
 <header>
-  <% if request.path == root_path  %>
+  <% if request.path == root_path || request.path == categories_path %>
     <button type="button" title="mobile menu open button" class="menu-btn">
       <span class="bar"></span>
     </button>
   <% else %>
-    <%= link_to :back, class: "nav-btn" do %>
+    <%= link_to root_path, class: "nav-btn" do %>
       <span class="ptr"></span>
     <% end %>
   <% end %>
@@ -19,7 +19,16 @@
     <h3 class="nav-header">PROFILE</h3>
   <% elsif current_user && request.path == edit_user_registration_path(current_user) %>
     <h3 class="nav-header">EDIT USER</h3>
-  <% else %>
+  <% elsif current_user && request.path == user_path(current_user) %>
     <h3 class="nav-header">USER</h3>
+  <% elsif request.path == categories_path || request.path == root_path %>
+    <h3 class="nav-header">CATEGORIES</h3>
+  <% elsif request.path == new_category_path %>
+    <h3 class="nav-header">CATEGORY</h3>
+  <% elsif request.path.to_s.include?("edit") && request.path.to_s.include?("categories") %>
+    <h3 class="nav-header">EDIT CATEGORY</h3>
+  <% else %>
+    <h3 class="nav-header">TRANSACTIONS</h3>
+<!--    <h3 class="nav-header">TRANSACTIONS</h3>-->
   <% end %>
 </header>
