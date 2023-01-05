@@ -48,23 +48,4 @@ RSpec.feature 'User Profile:', type: :feature do
       expect(page).to have_current_path(new_user_session_path)
     end
   end
-
-  # it 'click the login error' do
-  #   click_button 'LOG IN'
-  #   expect(page).to have_content 'Invalid Email or password.'
-  # end
-  #
-  # it 'click the login success' do
-  #   fill_in 'user_email', with: 'test@email.com'
-  #   fill_in 'user_password', with: 'password'
-  #   click_button 'LOG IN'
-  #   expect(page).to have_content 'Signed in successfully'
-  # end
-  #
-  # it 'Login successfully' do
-  #   fill_in 'user_email', with: 'test@email.com'
-  #   fill_in 'user_password', with: 'password'
-  #   click_button 'LOG IN'
-  #   expect(page).to have_current_path(user_path(@user))
-  # end
 end
