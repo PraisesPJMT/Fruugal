@@ -20,12 +20,12 @@
 
   <div class="user-section">
     <h3 class="sub-heading">Budget Info</h3>
-    <p><span class="user-detail">Budget count: </span>0</p>
-    <p><span class="user-detail">Transaction count: </span>0</p>
+    <p><span class="user-detail">Budget count: </span><%= @total_categories %></p>
+    <p><span class="user-detail">Expense count: </span><%= @total_expenses %></p>
   </div>
 
   <div class="btn-container">
-    <%= button_to "VIEW BUDGETS", user_session_path, class: "btn primary-btn"%>
+    <%= link_to "VIEW BUDGETS", categories_path, class: "btn primary-btn"%>
     <%= link_to "EDIT PROFILE", edit_user_registration_path(current_user), class: "btn secondary-btn"%>
     <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn delete-btn"%>
   </div>
