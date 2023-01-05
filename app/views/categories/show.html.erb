@@ -5,7 +5,7 @@
       <div class="cat-card-info">
         <p class="cat-det">
           <span class="cat-sec-name"><%= @category.name %></span>
-          <span class="cat-card-amount">$50</span>
+          <span class="cat-card-amount">$<%= @total_expenses %></span>
         </p>
         <div class="cat-sec-date">
           <p><%= @category.created_at.strftime("%d ") + @category.created_at.strftime("%B")[0..2] + @category.created_at.strftime(" %Y at %I:%M %p") %></p>
@@ -16,49 +16,32 @@
         </div>
       </div>
     </div>
-    <div class="trans-card">
-      <p class="trans-sec-total">
-        <span class="cat-sec-name">First transaction</span>
-        <span class="cat-card-amount">$50</span>
-      </p>
-      <div class="trans-date">
-        <p><%= @category.created_at.strftime("%d ") + @category.created_at.strftime("%B")[0..2] + @category.created_at.strftime(" %Y at %I:%M %p") %></p>
-        <div class="sm-btn-card">
-          <%= button_to "DELETE", category_path(@category), method: :delete, class: "sm-btn delete-btn"%>
+
+    <% if @expenses.any? %>
+      <% @expenses.each do |trans| %>
+        <div class="trans-card">
+          <p class="trans-sec-total">
+            <span class="cat-sec-name"><%= trans.expense.name %></span>
+            <span class="cat-card-amount">$<%= trans.expense.amount %></span>
+          </p>
+          <div class="trans-date">
+            <p><%= trans.expense.created_at.strftime("%d ") + trans.expense.created_at.strftime("%B")[0..2] + trans.expense.created_at.strftime(" %Y at %I:%M %p") %></p>
+            <div class="sm-btn-card">
+              <%= button_to "DELETE", expense_path(trans.expense), method: :delete, class: "sm-btn delete-btn"%>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="trans-card">
-      <p class="trans-sec-total">
-        <span class="cat-sec-name">Second transaction and some random long text</span>
-        <span class="cat-card-amount">$50</span>
+      <% end %>
+
+      <p class="cat-sec-total">
+        <span class="cat-sec-name">TOTAL TRANSACTIONS</span>
+        <span class="cat-card-amount">$<%= @total_expenses %></span>
       </p>
-      <div class="trans-date">
-        <p><%= @category.created_at.strftime("%d ") + @category.created_at.strftime("%B")[0..2] + @category.created_at.strftime(" %Y at %I:%M %p") %></p>
-        <div class="sm-btn-card">
-          <%= button_to "DELETE", category_path(@category), method: :delete, class: "sm-btn delete-btn"%>
-        </div>
-      </div>
-    </div>
-    <div class="trans-card">
-      <p class="trans-sec-total">
-        <span class="cat-sec-name">Third transaction</span>
-        <span class="cat-card-amount">$50</span>
-      </p>
-      <div class="trans-date">
-        <p><%= @category.created_at.strftime("%d ") + @category.created_at.strftime("%B")[0..2] + @category.created_at.strftime(" %Y at %I:%M %p") %></p>
-        <div class="sm-btn-card">
-          <%= button_to "DELETE", category_path(@category), method: :delete, class: "sm-btn delete-btn"%>
-        </div>
-      </div>
-    </div>
-    <p class="cat-sec-total">
-      <span class="cat-sec-name">TOTAL TRANSACTIONS</span>
-      <span class="cat-card-amount">$50</span>
-    </p>
+  <% end %>
+
   </div>
 
   <div class="btn-container">
-    <%= link_to "NEW TRANSACTION", new_category_path, class: "btn secondary-btn" %>
+    <%= link_to "NEW TRANSACTION", new_expense_path, class: "btn secondary-btn" %>
   </div>
 </section>

@@ -1,10 +1,10 @@
 <header>
   <% if request.path == root_path || request.path == categories_path %>
-    <button type="button" title="mobile menu open button" class="menu-btn">
+    <button type="button" title="mobile menu open button" class="menu-btn h-btn">
       <span class="bar"></span>
     </button>
   <% else %>
-    <%= link_to root_path, class: "nav-btn" do %>
+    <%= link_to root_path, class: "nav-btn h-btn" do %>
       <span class="ptr"></span>
     <% end %>
   <% end %>
@@ -29,6 +29,11 @@
     <h3 class="nav-header">EDIT CATEGORY</h3>
   <% else %>
     <h3 class="nav-header">TRANSACTIONS</h3>
-<!--    <h3 class="nav-header">TRANSACTIONS</h3>-->
+  <% end %>
+
+  <% if current_user %>
+    <%= link_to user_path(current_user), class: "user-avatar h-btn" do %>
+        <span class="user-initial"><%= current_user.name.split.map(&:first).join.upcase %></span>
+    <% end %>
   <% end %>
 </header>
