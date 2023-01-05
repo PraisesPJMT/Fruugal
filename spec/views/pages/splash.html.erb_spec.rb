@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Splash Screen:', type: :feature do
   before :each do
-    visit pages_splash_path
+    visit root_path
   end
 
   context 'Page Contents:' do

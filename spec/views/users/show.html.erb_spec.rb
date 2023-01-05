@@ -32,8 +32,8 @@ RSpec.feature 'User Profile:', type: :feature do
       expect(page).to have_link 'EDIT PROFILE'
     end
 
-    it 'contains button to "VIEW BUDGETS"' do
-      expect(page).to have_button 'VIEW BUDGETS'
+    it 'contains link to "VIEW BUDGETS"' do
+      expect(page).to have_link 'VIEW BUDGETS'
     end
   end
 

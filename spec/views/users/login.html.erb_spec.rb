@@ -32,7 +32,7 @@ RSpec.feature 'Login', type: :feature do
       fill_in 'user_email', with: 'test@email.com'
       fill_in 'user_password', with: 'password'
       click_button 'LOG IN'
-      expect(page).to have_current_path(user_path(@user))
+      expect(page).to have_current_path(categories_path)
     end
     it 'click "SIGN UP" should redirect to sign-up page' do
       click_link 'SIGN UP'
