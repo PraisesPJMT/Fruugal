@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Categories Page:', type: :feature do
+RSpec.feature 'Categories Index Page:', type: :feature do
   before :each do
     @user = User.new(name: 'John Doe', email: 'test@email.com', password: 'password', password_confirmation: 'password')
     @user.save

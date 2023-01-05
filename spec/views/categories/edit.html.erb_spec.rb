@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Category Page:', type: :feature do
+RSpec.feature 'Category Edit Page:', type: :feature do
   before :each do
     @user = User.new(name: 'John Doe', email: 'test@email.com', password: 'password', password_confirmation: 'password')
     @user.save
