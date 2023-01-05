@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:show]
   resources :pages
-  resources :categories
+  resources :categories, only: %i[index new show create edit update destroy]
+  resources :expenses, only: %i[new create destroy]
 end
