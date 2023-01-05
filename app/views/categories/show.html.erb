@@ -27,6 +27,7 @@
           <div class="trans-date">
             <p><%= trans.expense.created_at.strftime("%d ") + trans.expense.created_at.strftime("%B")[0..2] + trans.expense.created_at.strftime(" %Y at %I:%M %p") %></p>
             <div class="sm-btn-card">
+              <%= button_to "EDIT", edit_expense_path(trans.expense), method: :get, class: "sm-btn primary-btn" %>
               <%= button_to "DELETE", expense_path(trans.expense), method: :delete, class: "sm-btn delete-btn"%>
             </div>
           </div>

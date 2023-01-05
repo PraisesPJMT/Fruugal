@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "categories#index"
+  root to: "pages#splash"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :pages
   resources :categories, only: %i[index new show create edit update destroy]
-  resources :expenses, only: %i[new create destroy]
+  resources :expenses, only: %i[new create edit update destroy]
 end

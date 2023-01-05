@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :categories, foreign_key: 'author_id', dependent: :destroy
-  has_many :transactions, foreign_key: 'author_id', dependent: :destroy
+  has_many :expenses, foreign_key: 'author_id', dependent: :destroy
 end

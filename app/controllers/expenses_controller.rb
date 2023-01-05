@@ -14,9 +14,26 @@ class ExpensesController < ApplicationController
       expense_params[:expense_categories][:category_ids].each do |id|
         expense.expense_categories.create(category_id: id) unless id == ''
       end
-      redirect_to category_path(category), notice: 'Payment successfully created.'
+      redirect_to category_path(category), notice: 'Budget was successfully created.'
     else
-      render expense, error: 'There was a problem creating the payment.'
+      render expense, alert: 'Something went wrong! Budget expense was not created.'
+    end
+  end
+
+  def edit
+    @expense = Expense.find(params[:id])
+    @categories = current_user.categories
+    @expense_categories = @expense.expense_categories.build
+  end
+
+  def update
+    expense = Expense.find(params[:id])
+    if expense.update(expense_params.except(:expense_categories))
+      category = expense_params[:expense_categories][:category_ids][1]
+      redirect_to category_path(category), notice: 'Budget expense successfully updated.'
+    else
+      flash[:alert] = 'Something went wrong! Budget expense was not updated'
+      redirect_to edit_expense_path(expense)
     end
   end
 

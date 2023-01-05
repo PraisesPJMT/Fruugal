@@ -247,6 +247,7 @@ header {
 
 .sm-btn.primary-btn {
   border: 2px solid #3778c2bb;
+  cursor: pointer;
 }
 
 .sm-btn.primary-btn:hover {
@@ -274,6 +275,7 @@ header {
   background: #730e15bb;
   border: 2px solid #730e15bb;
   color: #fff;
+  cursor: pointer;
 }
 
 .delete-btn:hover,
@@ -472,6 +474,12 @@ select:focus {
   background-color: #fff;
   padding: 1rem;
   text-decoration: none;
+  transition: scale 0.3s ease-in-out;
+}
+
+.category-card:hover {
+  scale: 1.01;
+  border: 1px solid #3778c255;
 }
 
 .category-img {

@@ -4,7 +4,7 @@
       <span class="bar"></span>
     </button>
   <% else %>
-    <%= link_to root_path, class: "nav-btn h-btn" do %>
+    <%= link_to categories_path, class: "nav-btn h-btn" do %>
       <span class="ptr"></span>
     <% end %>
   <% end %>
@@ -21,7 +21,7 @@
     <h3 class="nav-header">EDIT USER</h3>
   <% elsif current_user && request.path == user_path(current_user) %>
     <h3 class="nav-header">USER</h3>
-  <% elsif request.path == categories_path || request.path == root_path %>
+  <% elsif request.path == categories_path %>
     <h3 class="nav-header">CATEGORIES</h3>
   <% elsif request.path == new_category_path %>
     <h3 class="nav-header">CATEGORY</h3>
