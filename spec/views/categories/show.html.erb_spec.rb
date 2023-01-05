@@ -24,7 +24,7 @@ RSpec.feature 'Category Page:', type: :feature do
     end
 
     it 'contains Category details "creation date"' do
-      expect(page).to have_content @category.created_at.strftime(" %Y at %I:%M %p")
+      expect(page).to have_content @category.created_at.strftime(' %Y at %I:%M %p')
     end
 
     it 'contains category icon image' do
