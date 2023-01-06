@@ -1,0 +1,39 @@
+<header>
+  <% if request.path == root_path || request.path == categories_path %>
+    <button type="button" title="mobile menu open button" class="menu-btn h-btn">
+      <span class="bar"></span>
+    </button>
+  <% else %>
+    <%= link_to categories_path, class: "nav-btn h-btn" do %>
+      <span class="ptr"></span>
+    <% end %>
+  <% end %>
+
+  <% if request.path == new_user_registration_path %>
+    <h3 class="nav-header">REGISTER</h3>
+  <% elsif request.path == new_user_session_path %>
+    <h3 class="nav-header">LOG IN</h3>
+  <% elsif request.path == new_user_password_path or request.path == edit_user_password_path %>
+    <h3 class="nav-header">PASSWORD</h3>
+  <% elsif current_user && request.path == user_path(current_user) %>
+    <h3 class="nav-header">PROFILE</h3>
+  <% elsif current_user && request.path == edit_user_registration_path(current_user) %>
+    <h3 class="nav-header">EDIT PROFILE</h3>
+  <% elsif current_user && request.path == user_path(current_user) %>
+    <h3 class="nav-header">USER</h3>
+  <% elsif request.path == categories_path %>
+    <h3 class="nav-header">CATEGORIES</h3>
+  <% elsif request.path == new_category_path %>
+    <h3 class="nav-header">CATEGORY</h3>
+  <% elsif request.path.to_s.include?("edit") && request.path.to_s.include?("categories") %>
+    <h3 class="nav-header">EDIT CATEGORY</h3>
+  <% else %>
+    <h3 class="nav-header">TRANSACTIONS</h3>
+  <% end %>
+
+  <% if current_user %>
+    <%= link_to user_path(current_user), class: "user-avatar h-btn" do %>
+        <span class="user-initial"><%= current_user.name.split.map(&:first).join.upcase %></span>
+    <% end %>
+  <% end %>
+</header>

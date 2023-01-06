@@ -1,0 +1,32 @@
+<section class="user">
+  <h1 class="sub-title"><%= @user.name %> Profile</h1>
+  <div class="user-section">
+    <p><span class="user-detail">Name: </span> <%= @user.name %></p>
+    <p><span class="user-detail">Email: </span> <%= @user.email %></p>
+  </div>
+
+  <div class="user-section">
+    <h3 class="sub-heading">Session Info</h3>
+    <p><span class="user-detail">Session count: </span> <%= @user.sign_in_count %></p>
+    <p>
+      <span class="user-detail">Current sign-in: </span>
+      <%= @user.current_sign_in_at.strftime("%d ") + @user.current_sign_in_at.strftime("%B")[0..2] + @user.current_sign_in_at.strftime(" %Y at %I:%M %p") %>
+    </p>
+    <p>
+      <span class="user-detail">Last sign-in: </span>
+      <%= @user.last_sign_in_at.strftime("%d ") + @user.last_sign_in_at.strftime("%B")[0..2] + @user.last_sign_in_at.strftime(" %Y at %I:%M %p") %>
+    </p>
+  </div>
+
+  <div class="user-section">
+    <h3 class="sub-heading">Budget Info</h3>
+    <p><span class="user-detail">Budget count: </span><%= @total_categories %></p>
+    <p><span class="user-detail">Expense count: </span><%= @total_expenses %></p>
+  </div>
+
+  <div class="btn-container">
+    <%= link_to "VIEW BUDGETS", categories_path, class: "btn primary-btn"%>
+    <%= link_to "EDIT PROFILE", edit_user_registration_path(current_user), class: "btn secondary-btn"%>
+    <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn delete-btn"%>
+  </div>
+</section>

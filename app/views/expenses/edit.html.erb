@@ -1,0 +1,25 @@
+<section class="transaction">
+  <%= form_with model: @expense, method: :put, scope: :new_expense do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: 'Transaction name', class: "input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.number_field :amount, autofocus: true, placeholder: 'Amount ($)', class: "input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.fields_for :expense_categories do |cp| %>
+        <%= cp.label :category_ids, 'Select category (at least one)', class: 'sign-link' %> <br>
+        <%= cp.collection_select :category_ids, @categories, :id, :name, {}, { multiple: true, required: true, class: "input", size: 2 } %>
+      <% end %>
+    </div>
+
+
+    <div class="btn-container">
+      <%= f.submit "UPDATE TRANSACTION", class: "btn secondary-btn"  %>
+      <%= link_to "BACK TO CATEGORY", :back, class: "btn primary-btn"%>
+    </div>
+
+  <% end %>
+</section>
