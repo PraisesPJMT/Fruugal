@@ -342,6 +342,8 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   height: 50vh;
 }
 
@@ -355,6 +357,8 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* Form Styles */
@@ -625,4 +629,17 @@ input[type="radio"]:checked + label {
   justify-content: space-between;
   align-items: start;
   gap: 1rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flex form {
+  display: inline;
+  padding: 0;
+  margin: 0;
 }
