@@ -9,12 +9,12 @@
       <p class="sign-link">Select an icon for category</p>
       <div class="check-boxes">
         <% Category::ICONS.each do |i| %>
-      <span>
-        <%= f.radio_button :icon, "https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/#{i}.png", id: i %>
-        <label for="<%=i%>" class="custom-radio">
-        <img src="https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/<%= i %>.png" class="select-icon" alt=<%= i %>>
-      </label>
-      </span>
+          <span>
+            <%= f.radio_button :icon, "https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/#{i}.png", id: i %>
+            <label for="<%=i%>" class="custom-radio">
+              <img src="https://raw.githubusercontent.com/PraisesPJMT/Data/main/categories/<%= i %>.png" class="select-icon" alt=<%= i %>>
+            </label>
+          </span>
         <% end %>
       </div>
     </div>

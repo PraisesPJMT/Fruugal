@@ -5,16 +5,18 @@
     - [🛠 Built With ](#built-with)
         - [Tech Stack ](#tech-stack)
         - [Key Features ](#key-features)
-    - [💻 Getting Started ](#getting-started)
-        - [Prerequisites](#prerequisites)
-        - [Setup](#setup)
-        - [Install](#install)
-        - [Usage](#usage)
-    - [👥 Authors ](#authors)
-    - [🤝 Contributing ](#contributing)
-    - [⭐️ Show your support ](#️show-your-support)
-    - [🙏 Acknowledgements](#acknowledgements)
-    - [📝 License ](#license)
+    - [🚀 App Preview](#preview)
+    - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started ](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+- [👥 Authors ](#authors)
+- [🤝 Contributing ](#contributing)
+- [⭐️ Show your support ](#️show-your-support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License ](#license)
 
 # 📖 Fruugal <a name="about-project"></a>
 
@@ -83,6 +85,29 @@
 - See all budget categories and the amount spent on them
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 App Preview <a name="preview"></a>
+
+> Here are screenshots of the application
+
+### Budget Categories and Transaction Pages Preview
+
+![Fruugal Preview 1](./fruugal_preview1.png)
+
+### User Pages Preview
+
+![Fruugal Preview 2](./fruugal_preview2.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> This app has been deployed using [Railway.app](https://railway.app/). Use th link below to view live app.
+- [Fruugal](fruugal-production.up.railway.app)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
