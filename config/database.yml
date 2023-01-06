@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-#  database: Fruugal_production
-#  username: Fruugal
-#  password: <%#= ENV["FRUUGAL_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
+  database: Fruugal_production
+  username: Fruugal
+  password: <%= ENV["FRUUGAL_DATABASE_PASSWORD"] %>
